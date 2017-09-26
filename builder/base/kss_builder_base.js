@@ -146,7 +146,20 @@ class KssBuilderBase {
         describe: 'Limit the navigation to the depth specified',
         default: 3
       },
-
+      'logo': {
+        group: 'Extra options:',
+        string: true,
+        multiple: false,
+        describe: 'Company logo',
+        default: ''
+      },
+      'mainmenu': {
+        group: 'Extra options:',
+        string: true,
+        multiple: true,
+        describe: 'Header menu',
+        default: []
+      },
       'verbose': {
         count: true,
         multiple: false,
@@ -331,7 +344,6 @@ class KssBuilderBase {
         this.optionDefinitions[key] = optionDefinitions[key];
       }
     }
-
     // Allow chaining.
     return this.normalizeOptions(Object.keys(optionDefinitions));
   }
@@ -400,7 +412,6 @@ class KssBuilderBase {
         }
       }
     }
-
     // Allow chaining.
     return this;
   }
